@@ -59,7 +59,9 @@ CREATE TABLE D_Data(
 
 create table D_BDI(
 	codigo_bdi varchar(2) primary key not null,
-	nome_bdi varchar(55) not null
+	nome_bdi varchar(55) not null,
+	lindata date not null,
+	linorig varchar(50) not null
 );
 
 create index IX_Codigo_BDI on D_BDI (codigo_bdi);
@@ -68,7 +70,9 @@ create index IX_Codigo_BDI on D_BDI (codigo_bdi);
 
 create table D_ESPECIFICACAO(
 	Sigla_especificacao varchar(15) primary key not null,
-	Nome_especificacao varchar(55) not null
+	Nome_especificacao varchar(55) not null,
+	lindata date not null,
+	linorig varchar(50) not null
 );
 
 create index IX_Sigla_Especificacao on D_ESPECIFICACAO (sigla_especificacao);
@@ -77,7 +81,9 @@ create index IX_Sigla_Especificacao on D_ESPECIFICACAO (sigla_especificacao);
 create table D_INDOPC(
 	Codigo_INDOPC int primary key not null,
 	Sigla_INDOPC varchar(5) not null,
-	Nome_INDOPC varchar(45) not null
+	Nome_INDOPC varchar(45) not null,
+	lindata date not null,
+	linorig varchar(50) not null
 );
 
 create index IX_Codigo_INDOPC on D_INDOPC (Codigo_INDOPC);
@@ -86,7 +92,9 @@ create index IX_Codigo_INDOPC on D_INDOPC (Codigo_INDOPC);
 
 create table D_NOMEACAO(
 	Codigo_TPMERC int primary key not null,
-	Nome_TPMERC varchar(45) not null
+	Nome_TPMERC varchar(45) not null,
+	lindata date not null,
+	linorig varchar(50) not null
 );
 
 create index IX_Codigo_TPMERC on D_NOMEACAO (Codigo_TPMERC);
