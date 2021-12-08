@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>bdi-dw</name>
+    <name>especificacao-dw</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -427,10 +427,10 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>-</created_user>
-    <created_date>2021/12/06 23:38:02.927</created_date>
+    <created_date>2021/12/07 22:34:01.752</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2021/12/06 23:38:02.927</modified_date>
-    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
+    <modified_date>2021/12/07 22:34:01.752</modified_date>
+    <key_for_session_key/>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
@@ -556,7 +556,7 @@
       <schema_name/>
     </partitioning>
     <schema>public</schema>
-    <table>d_bdi</table>
+    <table>d_especificacao</table>
     <connection>dw</connection>
     <commit>100</commit>
     <cache_size>9999</cache_size>
@@ -566,23 +566,23 @@
     <crcfield>hashcode</crcfield>
     <fields>
       <key>
-        <name>codigo_bdi</name>
-        <lookup>codigo_bdi</lookup>
+        <name>sigla_especificacao</name>
+        <lookup>sigla_especificacao</lookup>
       </key>
       <key>
-        <name>nome_bdi</name>
-        <lookup>nome_bdi</lookup>
+        <name>nome_especificacao</name>
+        <lookup>nome_especificacao</lookup>
       </key>
       <key>
-        <name>LinData</name>
+        <name>lindata</name>
         <lookup>lindata</lookup>
       </key>
       <key>
-        <name>LinOrig</name>
+        <name>linorig</name>
         <lookup>linorig</lookup>
       </key>
       <return>
-        <name>id_bdi</name>
+        <name>id_especificacao</name>
         <creation_method>tablemax</creation_method>
         <use_autoinc>N</use_autoinc>
       </return>
@@ -598,8 +598,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>592</xloc>
-      <yloc>176</yloc>
+      <xloc>544</xloc>
+      <yloc>336</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -616,9 +616,11 @@
     </partitioning>
     <connection>ds</connection>
     <sql>SELECT
-  codigo_bdi
-, nome_bdi
-FROM "public".d_bdi
+  sigla_especificacao
+, nome_especificacao
+, lindata
+, linorig
+FROM "public".d_especificacao
 </sql>
     <limit>0</limit>
     <lookup/>
@@ -630,11 +632,11 @@ FROM "public".d_bdi
       <value-meta>
         <type>String</type>
         <storagetype>normal</storagetype>
-        <name>codigo_bdi</name>
-        <length>2</length>
+        <name>sigla_especificacao</name>
+        <length>15</length>
         <precision>-1</precision>
         <origin>Table input</origin>
-        <comments>codigo_bdi</comments>
+        <comments>sigla_especificacao</comments>
         <conversion_Mask/>
         <decimal_symbol>.</decimal_symbol>
         <grouping_symbol>,</grouping_symbol>
@@ -653,11 +655,57 @@ FROM "public".d_bdi
       <value-meta>
         <type>String</type>
         <storagetype>normal</storagetype>
-        <name>nome_bdi</name>
-        <length>55</length>
+        <name>nome_especificacao</name>
+        <length>90</length>
         <precision>-1</precision>
         <origin>Table input</origin>
-        <comments>nome_bdi</comments>
+        <comments>nome_especificacao</comments>
+        <conversion_Mask/>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en</date_format_locale>
+        <date_format_timezone>America/Sao_Paulo</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>Date</type>
+        <storagetype>normal</storagetype>
+        <name>lindata</name>
+        <length>-1</length>
+        <precision>-1</precision>
+        <origin>Table input</origin>
+        <comments>lindata</comments>
+        <conversion_Mask/>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en</date_format_locale>
+        <date_format_timezone>America/Sao_Paulo</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>linorig</name>
+        <length>50</length>
+        <precision>-1</precision>
+        <origin>Table input</origin>
+        <comments>linorig</comments>
         <conversion_Mask/>
         <decimal_symbol>.</decimal_symbol>
         <grouping_symbol>,</grouping_symbol>
@@ -683,8 +731,8 @@ FROM "public".d_bdi
       </output>
     </remotesteps>
     <GUI>
-      <xloc>336</xloc>
-      <yloc>176</yloc>
+      <xloc>384</xloc>
+      <yloc>336</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

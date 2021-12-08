@@ -515,37 +515,6 @@
     </hop>
   </order>
   <step>
-    <name>Get system info</name>
-    <type>SystemInfo</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-      <field>
-        <name>LinData</name>
-        <type>system date (variable)</type>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>368</xloc>
-      <yloc>208</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
     <name>Add constants</name>
     <type>Constant</type>
     <description/>
@@ -585,6 +554,37 @@
     </GUI>
   </step>
   <step>
+    <name>Get system info</name>
+    <type>SystemInfo</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>LinData</name>
+        <type>system date (variable)</type>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>368</xloc>
+      <yloc>208</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
     <name>If field value is null</name>
     <type>IfNull</type>
     <description/>
@@ -605,13 +605,19 @@
     <fields>
       <field>
         <name>codigo_bdi</name>
-        <value>-1</value>
+        <value>0</value>
         <mask/>
         <set_empty_string>N</set_empty_string>
       </field>
       <field>
         <name>nome_bdi</name>
         <value>sem nome</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>LinOrig</name>
+        <value>registro inserido manualmente</value>
         <mask/>
         <set_empty_string>N</set_empty_string>
       </field>
